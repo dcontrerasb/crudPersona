@@ -9,17 +9,17 @@
       </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let empleados of persona">
+        <tr *ngFor="let empleados of personaService.getEmpleados()">
             <th scope="row">{{empleados.id}}</th>
             <td>{{empleados.nombre}}</td>
             <td>{{empleados.apellidos}}</td>
             <td>{{empleados.telefono}}</td>
             <td>
                 <div>
-                    <button class="btn btn-primary" [routerLink]="['/editar', 1]">Editar</button>
+                    <button class="btn btn-primary" [routerLink]="['/editar', empleados.id]">Editar</button>
                 </div>
                 <div>
-                    <button class="btn btn-danger" (click)="personaService.deleteEmpleado(1)">Eliminar</button>
+                    <button class="btn btn-danger" (click)="personaService.deleteEmpleado(empleados.id)">Eliminar</button>
                 </div>
             </td>
         </tr>
