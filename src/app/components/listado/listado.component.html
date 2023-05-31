@@ -1,1 +1,27 @@
-<p>listado works!</p>
+<button class="btn btn-success" [routerLink]="['/crear', 'empleado']"> Crear</button>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col-3">#</th>
+        <th scope="col-3">Nombre</th>
+        <th scope="col-3">Apellidos</th>
+        <th scope="col-3">telefono</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let empleados of persona">
+            <th scope="row">{{empleados.id}}</th>
+            <td>{{empleados.nombre}}</td>
+            <td>{{empleados.apellidos}}</td>
+            <td>{{empleados.telefono}}</td>
+            <td>
+                <div>
+                    <button class="btn btn-primary" [routerLink]="['/editar', 1]">Editar</button>
+                </div>
+                <div>
+                    <button class="btn btn-danger" (click)="personaService.deleteEmpleado(1)">Eliminar</button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+  </table>
