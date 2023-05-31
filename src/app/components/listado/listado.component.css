@@ -1,3 +1,7 @@
-table{
-    margin: auto;
+table {
+  margin: auto;
+}
+
+button {
+  margin: 0.5em;
 }

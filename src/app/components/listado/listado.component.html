@@ -1,27 +1,38 @@
-<button class="btn btn-success" [routerLink]="['/crear', 'empleado']"> Crear</button>
+<button class="btn btn-success" [routerLink]="['/crear', 'empleado']">
+  Crear
+</button>
 <table class="table">
-    <thead>
-      <tr>
-        <th scope="col-3">#</th>
-        <th scope="col-3">Nombre</th>
-        <th scope="col-3">Apellidos</th>
-        <th scope="col-3">telefono</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let empleados of personaService.getEmpleados()">
-            <th scope="row">{{empleados.id}}</th>
-            <td>{{empleados.nombre}}</td>
-            <td>{{empleados.apellidos}}</td>
-            <td>{{empleados.telefono}}</td>
-            <td>
-                <div>
-                    <button class="btn btn-primary" [routerLink]="['/editar', empleados.id]">Editar</button>
-                </div>
-                <div>
-                    <button class="btn btn-danger" (click)="personaService.deleteEmpleado(empleados.id)">Eliminar</button>
-                </div>
-            </td>
-        </tr>
-    </tbody>
-  </table>
+  <thead>
+    <tr>
+      <th scope="col-3">#</th>
+      <th scope="col-3">Nombre</th>
+      <th scope="col-3">Apellidos</th>
+      <th scope="col-3">telefono</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let empleados of personaService.getEmpleados()">
+      <th scope="row">{{ empleados.id }}</th>
+      <td>{{ empleados.nombre }}</td>
+      <td>{{ empleados.apellidos }}</td>
+      <td>{{ empleados.telefono }}</td>
+      <td>
+        <button
+          class="btn btn-primary"
+          [routerLink]="['/editar', empleados.id]"
+        >
+          Editar
+        </button>
+
+        <button
+          class="btn btn-danger"
+          (click)="personaService.deleteEmpleado(empleados.id)"
+        >
+          Eliminar
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<button class="btn" [routerLink]="['/']">Cerrar sesión</button>
