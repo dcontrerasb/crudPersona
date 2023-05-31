@@ -1,3 +1,10 @@
-body{
-    background-color: aqua;
+header {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.container {
+  border: 1px solid black;
+  padding: 1em;
+  border-radius: 8px;
 }
